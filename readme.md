@@ -14,7 +14,7 @@ Risk Scoring & Classification – Computes a risk score and assigns a risk level
 Recommendations – Generates actionable, non-diagnostic guidance.
 
 Route
-POST /api/health-risk/profiler
+GET /api/health-risk/profiler
 
 Description: Accepts either JSON data or an image file and returns a full health risk profile.
 
@@ -129,7 +129,7 @@ Missing fields are handled with missingFields and confidence score.
 
 Example Usage
 JSON Request
-curl -X POST http://localhost:3000/api/health-risk/parsedData \
+curl -X GET http://localhost:3000/api/health-risk/profiler \
 -H "Content-Type: application/json" \
 -d '{
   "age": 65,
@@ -139,7 +139,7 @@ curl -X POST http://localhost:3000/api/health-risk/parsedData \
 }'
 
 Image Upload Request
-curl -X POST http://localhost:3000/api/health-risk/parsedData \
+curl -X GET http://localhost:3000/api/health-risk/profiler \
 -F "file=@survey.jpg"
 
 Project Structure
