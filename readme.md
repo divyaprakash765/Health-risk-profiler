@@ -35,11 +35,11 @@ Output (JSON):
   },
   "missingFields": [],
   "confidence": 1,
-  "factors": ["smoking", "low exercise", "poor diet", "old age"],
+  "factors": ["smoking", "low exercise", "poor diet"],
   "risk_level": "High Risk",
-  "score": 120,
-  "rationale": ["smoking", "low activity", "high sugar diet", "old age"],
-  "recommendations": ["Quit Smoking", "Walk 30 mins daily", "Reduce sugar", "Regular health check-ups"],
+  "score": 70,
+  "rationale": ["smoking", "low activity", "high sugar diet"],
+  "recommendations": ["Quit Smoking", "Walk 30 mins daily", "Reduce sugar"],
   "status": "ok"
 }
 
@@ -141,20 +141,6 @@ curl -X GET http://localhost:3000/api/health-risk/profiler \
 Image Upload Request
 curl -X GET http://localhost:3000/api/health-risk/profiler \
 -F "file=@survey.jpg"
-
-Project Structure
-project/
-│
-├─ routes/
-│   └─ healthRisk.js      # parsedData route
-├─ controllers/
-│   └─ healthRiskController.js
-├─ utils/
-│   └─ ocrParser.js       # Tesseract.js OCR and normalization
-│   └─ factorHandler.js   # Score, risk, rationale, recommendations
-├─ package.json
-├─ README.md
-└─ ...
 
 Tech Stack
 
